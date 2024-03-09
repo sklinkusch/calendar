@@ -22,7 +22,7 @@ export function Card({ date }: CardProps) {
       <div className={styles.weekday}>
         <span>{date.weekday}</span>
       </div>
-      <div>{date.time && <span>{date.time}</span>}</div>
+      <div className={styles.time}>{date.time && <span>{date.time}</span>}</div>
     </div>
   );
 }
