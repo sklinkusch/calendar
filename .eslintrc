@@ -4,6 +4,7 @@
     "sourceType": "module",
     "ecmaVersion": 2021,
     "project": true,
+    "extraFileExtensions": [".css"],
     "ecmaFeatures": {
       "jsx": true,
     },
