@@ -1,5 +1,6 @@
 import { useNamedState } from 'use-named-state';
 import { Card } from '../Card/Card';
+import { useEffect } from 'react';
 
 type GregorianDate = {
   weekday?: string;
@@ -113,12 +114,35 @@ function writeIslamicDate(adjustment: number) {
     'Dhul Hijja',
   ];
   const iDate = kuwaiticalendar(adjustment);
-  const outputObject = { weekday: wdNames[iDate[4]], day: iDate[5], month: iMonthNames[iDate[6]], year: iDate[7] };
+  const date = new Date();
+  const hour = date.getHours();
+  const semanticHours = hour < 10 ? `0${hour}` : `${hour}`;
+  const minute = date.getMinutes();
+  const semanticMins = minute < 10 ? `0${minute}` : `${minute}`;
+  const second = date.getSeconds();
+  const semanticSecs = second < 10 ? `0${second}` : `${second}`;
+  const time = `${semanticHours}:${semanticMins}:${semanticSecs}`;
+  const outputObject = {
+    weekday: wdNames[iDate[4]],
+    day: iDate[5],
+    month: iMonthNames[iDate[6]],
+    year: iDate[7],
+    time,
+  };
   return outputObject;
 }
 
 export function IslamicCalendar() {
-  const [islDate] = useNamedState<GregorianDate>('islamicDate', writeIslamicDate(-1));
+  const [islDate, setIslDate] = useNamedState<GregorianDate>('islamicDate', {});
+  useEffect(() => {
+    const getDate = () => {
+      const dateObject = writeIslamicDate(-1);
+      setIslDate(dateObject);
+    };
+    getDate();
+    setInterval(getDate, 1000);
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
+  }, []);
   return (
     <>
       <Card date={islDate} />

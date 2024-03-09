@@ -40,10 +40,18 @@ export function GregorianCalendar() {
       const month = months[date.getMonth()];
       const monthNumber = date.getMonth();
       const year = date.getFullYear();
-      const completeDate = { weekday, day, ending, month, monthNumber, year };
+      const hour = date.getHours();
+      const semanticHours = hour < 10 ? `0${hour}` : `${hour}`;
+      const minute = date.getMinutes();
+      const semanticMins = minute < 10 ? `0${minute}` : `${minute}`;
+      const second = date.getSeconds();
+      const semanticSecs = second < 10 ? `0${second}` : `${second}`;
+      const time = `${semanticHours}:${semanticMins}:${semanticSecs}`;
+      const completeDate = { weekday, day, ending, month, monthNumber, year, time };
       setGregDate(completeDate);
     };
     getDate();
+    setInterval(getDate, 1000);
     /* eslint-disable-next-line react-hooks/exhaustive-deps */
   }, []);
   return (
