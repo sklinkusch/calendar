@@ -6,8 +6,8 @@
     "project": true,
     "extraFileExtensions": [".css"],
     "ecmaFeatures": {
-      "jsx": true,
-    },
+      "jsx": true
+    }
   },
   "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
   "extends": [
@@ -17,24 +17,24 @@
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
     "plugin:prettier/recommended",
-    "prettier",
+    "prettier"
   ],
   "rules": {
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-explicit-any": "warn",
     "prettier/prettier": "error",
     "arrow-body-style": "off",
-    "prefer-arrow-callback": "off",
+    "prefer-arrow-callback": "off"
   },
   "env": {
     "browser": true,
     "es2021": true,
-    "node": true,
+    "node": true
   },
   "settings": {
     "react": {
-      "version": "detect",
-    },
+      "version": "detect"
+    }
   },
-  "ignorePatterns": ["vite.config.ts", "tsconfig.json", "tsconfig.node.json", "custom.d.ts", "README.md"],
+  "ignorePatterns": ["vite.config.ts", "tsconfig.json", "tsconfig.node.json", "custom.d.ts", "README.md"]
 }
