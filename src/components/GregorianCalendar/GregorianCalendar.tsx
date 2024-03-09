@@ -33,20 +33,17 @@ export function GregorianCalendar() {
       }
     };
     const getDate = () => {
-      const date = new Date();
+      const queryParameters = new URLSearchParams(window.location.search);
+      const preDate = queryParameters.get('date');
+      const date = preDate ? new Date(preDate) : new Date();
       const weekday = days[date.getDay()];
       const day = date.getDate();
       const ending = getEnding(day);
       const month = months[date.getMonth()];
       const monthNumber = date.getMonth();
       const year = date.getFullYear();
-      const hour = date.getHours();
-      const semanticHours = hour < 10 ? `0${hour}` : `${hour}`;
-      const minute = date.getMinutes();
-      const semanticMins = minute < 10 ? `0${minute}` : `${minute}`;
-      const second = date.getSeconds();
-      const semanticSecs = second < 10 ? `0${second}` : `${second}`;
-      const time = `${semanticHours}:${semanticMins}:${semanticSecs}`;
+      const timeDate = new Date();
+      const time = timeDate.toLocaleTimeString('de', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
       const completeDate = { weekday, day, ending, month, monthNumber, year, time };
       setGregDate(completeDate);
     };
