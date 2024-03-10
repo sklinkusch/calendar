@@ -135,7 +135,7 @@ export function IslamicCalendar() {
       setIslDate(dateObject);
     };
     getDate();
-    setInterval(getDate, 1000);
+    setInterval(getDate, 500);
     /* eslint-disable-next-line react-hooks/exhaustive-deps */
   }, []);
   return (
