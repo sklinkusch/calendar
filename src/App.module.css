@@ -1,6 +1,12 @@
 .grid {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 5rem;
+}
+
+@media screen and (min-width: 560px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
