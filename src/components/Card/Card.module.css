@@ -6,20 +6,20 @@
 }
 
 .monthyear {
-  font-family: 'sans-serif';
+  font-family: 'Arial', 'sans-serif';
   font-size: 2rem;
   text-transform: uppercase;
   font-weight: 500;
 }
 
 .day {
-  font-family: 'sans-serif';
+  font-family: 'Arial', 'sans-serif';
   font-size: 8rem;
   font-weight: 900;
 }
 
 .weekday {
-  font-family: 'sans-serif';
+  font-family: 'Arial', 'sans-serif';
   font-size: 1.6rem;
   text-transform: uppercase;
   font-weight: 400;
