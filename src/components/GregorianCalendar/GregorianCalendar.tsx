@@ -53,7 +53,7 @@ export function GregorianCalendar() {
   }, []);
   return (
     <>
-      <Card date={gregDate} />
+      <Card date={gregDate} name="Gregorian Calendar" />
     </>
   );
 }

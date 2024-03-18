@@ -140,7 +140,7 @@ export function IslamicCalendar() {
   }, []);
   return (
     <>
-      <Card date={islDate} />
+      <Card date={islDate} name="Islamic Calendar" />
     </>
   );
 }
