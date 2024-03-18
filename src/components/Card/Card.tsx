@@ -10,11 +10,15 @@ type Cdate = {
 
 type CardProps = {
   date: Cdate;
+  name: string;
 };
 
-export function Card({ date }: CardProps) {
+export function Card({ date, name }: CardProps) {
   return (
     <div className={styles.card}>
+      <div className={styles.name}>
+        <span>{name}</span>
+      </div>
       <div className={styles.monthyear}>
         <span>{date.month}</span> <span>{date.year}</span>
       </div>
